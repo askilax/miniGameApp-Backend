@@ -4,7 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
-hpp = require('hpp');
+const hpp = require('hpp');
 const xssClean = require('xss-clean');
 const usersRouter = require('./routes/users');
 const logger = require('morgan');
@@ -20,23 +20,23 @@ connectDB();
 // Middleware de sécurité
 
 const setSecurityMiddleware = (app) => {
-  // Protéger les en-têtes HTTP
+  console.log('Setting helmet middleware');
   app.use(helmet());
 
-  // Protection contre les injections dans MongoDB
+  console.log('Setting mongoSanitize middleware');
   app.use(mongoSanitize());
 
-  // Protection contre les attaques par pollution des paramètres HTTP
+  console.log('Setting hpp middleware');
   app.use(hpp());
 
-  // Protection contre les attaques de script intersites (XSS)
+  console.log('Setting xssClean middleware');
   app.use(xssClean());
 
-  // Limite de Requête - Utiliser uniquement en production
   if (process.env.NODE_ENV === 'production') {
+    console.log('Setting rate limiting');
     const limiter = rateLimit({
-      windowMs: 15 * 60 * 1000, // 15 minutes
-      max: 100, // Limite chaque IP à 100 requêtes
+      windowMs: 15 * 60 * 1000, 
+      max: 100,
       message: {
         code: 429,
         message: "Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard."
