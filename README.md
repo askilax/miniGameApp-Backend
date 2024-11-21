@@ -39,10 +39,10 @@ Pour éviter les fuites de données et garantir la sécurité de l'application :
 ## Contact
 
 Pour toute question, suggestion ou collaboration, vous pouvez me contacter via :
-- **Email** : maxime@leblogdemaxs.fr
+- **Email** : maximesbaizero@gmail.com
 - **GitHub** : [Maxime Sbaizero](https://github.com/askilax)
 
-Merci d'avoir pris le temps de découvrir le backend de **MiniGameApp** ! Ensemble, nous pouvons rendre cette application encore meilleure.
+Merci d'avoir pris le temps de découvrir le backend de **MiniGameApp** !
 
 ---
 
